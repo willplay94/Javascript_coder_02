@@ -11,18 +11,24 @@ let datoGastoCategoria = ""
 let montoFormateado = ""
 let confirmacionIngreso = false
 let confirmacionGasto = false
+let confirmacionGuardadoDatos = false
 let respuestaInvalida = true
 
+//FUNCIONES========================================================
+
+//Funcion para agregar datos financieros
 function agregarDatosFinancieros() {
     while (respuestaInvalida == true) {
-
         respuestaUsuario = prompt('¿Que dato deseas agregar?\n A. Ingreso \n B. Gasto\n C. Mostrar datos actuales')
 
+        //Respuesta usuario
         respuestaUsuario = respuestaUsuario.toLowerCase()
         console.log('Esto puso el usuario ' + respuestaUsuario)
 
+        //Bucle de opciones dependiendo de la respuesta del usuario
         switch (respuestaUsuario) {
             case 'a':
+                //Para registrar un ingreso 
                 while (!confirmacionIngreso) {
                     datoIngresoNombre = prompt('¿Cúal es el nombre del ingreso? ')
                     datoIngresoCategoria = prompt('¿Qué categoría es el ingreso? ')
@@ -42,6 +48,9 @@ function agregarDatosFinancieros() {
                         })
 
                         console.log('Ingreso para registrar\nNombre: ' + datoIngresoNombre + '\nCategoria: ' + datoIngresoCategoria + '\nMonto: ' + datoIngresoMonto)
+
+                        console.log(ingresosArray)
+                        console.log(gastosArray)
                         break
 
                     } else {
@@ -53,6 +62,7 @@ function agregarDatosFinancieros() {
                 confirmacionIngreso = false
                 break
             case 'b':
+                //Para registrar un gasto
                 while (!confirmacionGasto) {
                     datoGastoNombre = prompt('¿Cúal es el nombre del gasto? ')
                     datoGastoCategoria = prompt('¿Qué categoría es el gasto? ')
@@ -83,7 +93,8 @@ function agregarDatosFinancieros() {
                 confirmacionGasto = false
                 break
             case 'c':
-                alert('Estos son los ingresos registrados: ' + ingresosArray + '\nEstos son los gastos registrados: ' + gastosArray)
+                //Para mostrar los datos registrados
+                alert('Estos son los ingresos registrados: ' + 'Ingresos: ' + ingresosArray + '\nGastos: ' + gastosArray)
                 console.log('ingresos:\n' + ingresosArray)
                 console.log('gastos:\n' + gastosArray)
                 respuestaInvalida = false
@@ -96,4 +107,60 @@ function agregarDatosFinancieros() {
     }
 }
 
-agregarDatosFinancieros()
+//Funcion para almacenar datos en el local storage
+function almacenarDatosFinancieros() {
+    respuestaUsuario = prompt('¿Deseas guardar?\n A.Ingresos\n B. Gastos')
+    respuestaUsuario = respuestaUsuario.toLowerCase()
+    console.log('El ususario respondio ' + respuestaUsuario)
+
+    switch (respuestaUsuario) {
+        case 'a':
+            alert('Estos son los ingresos que tienes \n' + ingresosArray)
+            confirmacionGuardadoDatos = confirm('¿Quieres guardar estos datos?')
+            console.log('El usuario respondio ' + confirmacionGuardadoDatos)
+
+            if (confirmacionGuardadoDatos == true) {
+                localStorage.setItem('Ingresos', JSON.stringify(ingresosArray))
+                alert('Datos de ingresos guardados')
+                console.log('Datos de ingresos guardados' + ingresosArray)
+            } else {
+                alert('No guardaste los datos')
+                console.log('No se guardaron los datos')
+            }
+            break
+        case 'b':
+            alert('Estos son los gastos que tienes \n' + gastosArray)
+            confirmacionGuardadoDatos = confirm('¿Quieres guardar estos datos?')
+            console.log('El usuario respondio ' + confirmacionGuardadoDatos)
+
+            if (confirmacionGuardadoDatos == true) {
+                localStorage.setItem('Gastos', JSON.stringify(gastosArray))
+                alert('Datos de gastos guardados')
+                console.log('Datos de gastos guardados' + gastosArray)
+            } else {
+                alert('No guardaste los datos')
+                console.log('No se guardaron los datos')
+            }
+            break
+        default:
+            alert('Ingresaste una opción no valida')
+            console.log('Opción no valida')
+    }
+}
+
+//DOM==============================================================
+
+//Boton agregar o mostrar finanzas
+const botonAgregarMostrarFinanzas = document.getElementById('botonAgregarMostrarFinanzas')
+console.log(botonAgregarMostrarFinanzas)
+
+//Boton almacenar datos
+const botonAlmacenarDatos = document.getElementById('botonAlmacenarDatos')
+console.log(botonAlmacenarDatos)
+
+//EJECUCION========================================================
+
+botonAgregarMostrarFinanzas.addEventListener('click', function() {
+    alert('Ahora a agregar tus datos financieros')
+    agregarDatosFinancieros()
+})

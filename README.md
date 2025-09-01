@@ -36,22 +36,24 @@ Ejercicio_XX_nombre_ejercicio/
 
 **Cómo ejecutar:** Abrir `index.html` en el navegador
 
-## 🚀 Cómo Usar Este Repositorio
+### Ejercicio 02 - Calculadora Financiera
+**Ubicación:** `Ejercicio_02_finanzas/`
 
-1. **Clonar el repositorio:**
-   ```bash
-   git clone [URL-del-repositorio]
-   cd javascript_coder02
-   ```
+**Descripción:** Aplicación para gestionar finanzas personales que permite:
+- Registrar ingresos con nombre, categoría y monto
+- Registrar gastos con nombre, categoría y monto
+- Mostrar datos financieros actuales
+- Almacenar datos en localStorage del navegador
 
-2. **Ejecutar un ejercicio:**
-   - Navegar a la carpeta del ejercicio deseado
-   - Abrir el archivo `index.html` en tu navegador
-   - Seguir las instrucciones que aparecen en pantalla
+**Conceptos practicados:**
+- Estructuras de control (`switch`, `while`)
+- Arrays de objetos para almacenamiento de datos
+- Manipulación del DOM con `getElementById` y `addEventListener`
+- LocalStorage para persistencia de datos
+- Confirmaciones y validación de entrada
+- Formateo de números con `toLocaleString()`
 
-3. **Revisar el código:**
-   - El código JavaScript se encuentra en la carpeta `script/` de cada ejercicio
-   - Cada archivo está comentado para facilitar la comprensión
+**Cómo ejecutar:** Abrir `index.html` en el navegador y usar los botones para interactuar
 
 ## 📈 Próximos Ejercicios
 
@@ -62,7 +64,3 @@ Este repositorio se actualizará continuamente con nuevos ejercicios que cubrir�
 - APIs y fetch
 - Algoritmos y estructuras de datos
 - Y mucho más...
-
-## 🤝 Contribuciones
-
-Si tienes ideas para nuevos ejercicios o mejoras a los existentes, ¡no dudes en contribuir!
