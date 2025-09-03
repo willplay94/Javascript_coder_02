@@ -94,7 +94,7 @@ function agregarDatosFinancieros() {
                 break
             case 'c':
                 //Para mostrar los datos registrados
-                alert('Estos son los ingresos registrados: ' + 'Ingresos: ' + ingresosArray + '\nGastos: ' + gastosArray)
+                alert('Estos son los ingresos registrados: ' + 'Ingresos: ' + JSON.stringify(ingresosArray) + '\nGastos: ' + JSON.stringify(gastosArray))
                 console.log('ingresos:\n' + ingresosArray)
                 console.log('gastos:\n' + gastosArray)
                 respuestaInvalida = false
@@ -105,46 +105,65 @@ function agregarDatosFinancieros() {
                 break
         }
     }
+    respuestaInvalida = true
 }
 
 //Funcion para almacenar datos en el local storage
 function almacenarDatosFinancieros() {
-    respuestaUsuario = prompt('¿Deseas guardar?\n A.Ingresos\n B. Gastos')
-    respuestaUsuario = respuestaUsuario.toLowerCase()
-    console.log('El ususario respondio ' + respuestaUsuario)
+    //Valida primero si tienes datos para almacenar
+    if (ingresosArray.length === 0 && gastosArray.length === 0) {
+        alert('No tienes datos para almacenar\nIngresos: ' + JSON.stringify(ingresosArray) + '\nGastos: ' + JSON.stringify(gastosArray) + '\nRegistra datos primero porfavor')
+        console.log('No hay datos a ingresar')
+    } else {
+        //Ejecuta el almacenamiento
+        while (respuestaInvalida == true) {
+            respuestaUsuario = prompt('¿Deseas guardar?\n A.Ingresos\n B. Gastos')
+            respuestaUsuario = respuestaUsuario.toLowerCase()
+            console.log('El ususario respondio ' + respuestaUsuario)
 
-    switch (respuestaUsuario) {
-        case 'a':
-            alert('Estos son los ingresos que tienes \n' + ingresosArray)
-            confirmacionGuardadoDatos = confirm('¿Quieres guardar estos datos?')
-            console.log('El usuario respondio ' + confirmacionGuardadoDatos)
+            // Evalúa la respuesta del usuario y ejecuta la acción correspondiente
+            switch (respuestaUsuario) {
+                case 'a':
+                    // Guarda los datos de ingresos en localStorage
+                    alert('Estos son los ingresos que tienes \n' + ingresosArray)
+                    confirmacionGuardadoDatos = confirm('¿Quieres guardar estos datos?')
+                    console.log('El usuario respondio ' + confirmacionGuardadoDatos)
 
-            if (confirmacionGuardadoDatos == true) {
-                localStorage.setItem('Ingresos', JSON.stringify(ingresosArray))
-                alert('Datos de ingresos guardados')
-                console.log('Datos de ingresos guardados' + ingresosArray)
-            } else {
-                alert('No guardaste los datos')
-                console.log('No se guardaron los datos')
+                    if (confirmacionGuardadoDatos == true) {
+                        localStorage.setItem('Ingresos', JSON.stringify(ingresosArray))
+                        alert('Datos de ingresos guardados')
+                        console.log('Datos de ingresos guardados' + ingresosArray)
+                    } else {
+                        alert('No guardaste los datos')
+                        console.log('No se guardaron los datos')
+                    }
+                    respuestaInvalida = false
+                    break
+                case 'b':
+                    // Guarda los datos de gastos en localStorage
+                    alert('Estos son los gastos que tienes \n' + gastosArray)
+                    confirmacionGuardadoDatos = confirm('¿Quieres guardar estos datos?')
+                    console.log('El usuario respondio ' + confirmacionGuardadoDatos)
+
+                    if (confirmacionGuardadoDatos == true) {
+                        localStorage.setItem('Gastos', JSON.stringify(gastosArray))
+                        alert('Datos de gastos guardados')
+                        console.log('Datos de gastos guardados' + gastosArray)
+                    } else {
+                        alert('No guardaste los datos')
+                        console.log('No se guardaron los datos')
+                    }
+                    respuestaInvalida = false
+                    break
+                default:
+                    // Maneja opciones no válidas y permite al usuario intentar de nuevo
+                    alert('Ingresaste una opción no valida')
+                    console.log('Opción no valida')
+                    respuestaInvalida = true
+                    break
             }
-            break
-        case 'b':
-            alert('Estos son los gastos que tienes \n' + gastosArray)
-            confirmacionGuardadoDatos = confirm('¿Quieres guardar estos datos?')
-            console.log('El usuario respondio ' + confirmacionGuardadoDatos)
-
-            if (confirmacionGuardadoDatos == true) {
-                localStorage.setItem('Gastos', JSON.stringify(gastosArray))
-                alert('Datos de gastos guardados')
-                console.log('Datos de gastos guardados' + gastosArray)
-            } else {
-                alert('No guardaste los datos')
-                console.log('No se guardaron los datos')
-            }
-            break
-        default:
-            alert('Ingresaste una opción no valida')
-            console.log('Opción no valida')
+        }
+        respuestaInvalida = true
     }
 }
 
@@ -160,7 +179,12 @@ console.log(botonAlmacenarDatos)
 
 //EJECUCION========================================================
 
-botonAgregarMostrarFinanzas.addEventListener('click', function() {
+botonAgregarMostrarFinanzas.addEventListener('click', function () {
     alert('Ahora a agregar tus datos financieros')
     agregarDatosFinancieros()
+})
+
+botonAlmacenarDatos.addEventListener('click', function () {
+    alert('Vamos a almacenar los datos ingresados')
+    almacenarDatosFinancieros()
 })
