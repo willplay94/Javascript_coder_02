@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- JS -->
     <script defer src="./script/main.js"></script>
+    <link rel="stylesheet" href="./styles/style.css">
     <title>Calculadora Financiera</title>
 </head>
 <body>
@@ -14,8 +15,15 @@
     <p>Registra tus ingresos y gastos, o consulta los datos que ya tienes guardados.</p>
     <button id="botonAgregarMostrarFinanzas">Empieza</button>
 
-    <h2>Almacenar datos</h2>
-    <p>Guarda tus datos financieros en el navegador para no perderlos. Importante agregar los datos primero y luego almacenar todos los datos</p>
-    <button id="botonAlmacenarDatos">Almacenar</button>
+    <h2>Almacenar o borrar datos</h2>
+    <p>Guarda tus datos financieros en el navegador para no perderlos. Importante agregar los datos primero y luego almacenar todos los datos.</p>
+    <div class="contenedor-botones">
+        <button id="botonAlmacenarDatos">Almacenar</button>
+        <button id="botonBorrarDatos">Borrar</button>
+    </div>
+
+    <h2>Calcular</h2>
+    <p>Aquí se calcula la diferencia entre gastos e ingresos a partir de los datos alamcenados.</p>
+    <button id="botonCalcular">Calcular</button>
 </body>
 </html>

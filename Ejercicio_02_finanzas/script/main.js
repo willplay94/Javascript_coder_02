@@ -95,8 +95,8 @@ function agregarDatosFinancieros() {
             case 'c':
                 //Para mostrar los datos registrados
                 alert('Estos son los ingresos registrados: ' + 'Ingresos: ' + JSON.stringify(ingresosArray) + '\nGastos: ' + JSON.stringify(gastosArray))
-                console.log('ingresos:\n' + ingresosArray)
-                console.log('gastos:\n' + gastosArray)
+                console.log('ingresos:\n' + JSON.stringify(ingresosArray))
+                console.log('gastos:\n' + JSON.stringify(gastosArray))
                 respuestaInvalida = false
                 break
             default:
@@ -125,12 +125,12 @@ function almacenarDatosFinancieros() {
             switch (respuestaUsuario) {
                 case 'a':
                     // Guarda los datos de ingresos en localStorage
-                    alert('Estos son los ingresos que tienes \n' + ingresosArray)
+                    alert('Estos son los ingresos que tienes \n' + JSON.stringify(ingresosArray))
                     confirmacionGuardadoDatos = confirm('¿Quieres guardar estos datos?')
                     console.log('El usuario respondio ' + confirmacionGuardadoDatos)
 
                     if (confirmacionGuardadoDatos == true) {
-                        localStorage.setItem('Ingresos', JSON.stringify(ingresosArray))
+                        localStorage.setItem('ingresos', JSON.stringify(ingresosArray))
                         alert('Datos de ingresos guardados')
                         console.log('Datos de ingresos guardados' + ingresosArray)
                     } else {
@@ -141,14 +141,14 @@ function almacenarDatosFinancieros() {
                     break
                 case 'b':
                     // Guarda los datos de gastos en localStorage
-                    alert('Estos son los gastos que tienes \n' + gastosArray)
+                    alert('Estos son los gastos que tienes \n' + JSON.stringify(gastosArray))
                     confirmacionGuardadoDatos = confirm('¿Quieres guardar estos datos?')
                     console.log('El usuario respondio ' + confirmacionGuardadoDatos)
 
                     if (confirmacionGuardadoDatos == true) {
-                        localStorage.setItem('Gastos', JSON.stringify(gastosArray))
+                        localStorage.setItem('gastos', JSON.stringify(gastosArray))
                         alert('Datos de gastos guardados')
-                        console.log('Datos de gastos guardados' + gastosArray)
+                        console.log('Datos de gastos guardados' + JSON.stringify(gastosArray))
                     } else {
                         alert('No guardaste los datos')
                         console.log('No se guardaron los datos')
@@ -167,6 +167,15 @@ function almacenarDatosFinancieros() {
     }
 }
 
+function calculosIngresosVsGastos() {
+    let ingresosRecuperadosArray = JSON.parse(localStorage.getItem('ingresos'))
+    console.log(ingresosRecuperadosArray)
+    let gastosRecuperadosArray = JSON.parse(localStorage.getItem('gastos'))
+    console.log(gastosRecuperadosArray)
+
+    alert('Datos disponibles\n' + 'Ingresos: ' + JSON.stringify(ingresosRecuperadosArray) + '\nGastos: ' + JSON.stringify(gastosRecuperadosArray))
+} 
+
 //DOM==============================================================
 
 //Boton agregar o mostrar finanzas
@@ -176,6 +185,15 @@ console.log(botonAgregarMostrarFinanzas)
 //Boton almacenar datos
 const botonAlmacenarDatos = document.getElementById('botonAlmacenarDatos')
 console.log(botonAlmacenarDatos)
+
+//Boton para calcular
+const botonCalcular = document.getElementById('botonCalcular')
+console.log(botonCalcular)
+
+//Boton para borrar todos los datos del almacenamiento
+const botonBorrarDatos = document.getElementById('botonBorrarDatos')
+console.log(botonBorrarDatos)
+
 
 //EJECUCION========================================================
 
@@ -187,4 +205,13 @@ botonAgregarMostrarFinanzas.addEventListener('click', function () {
 botonAlmacenarDatos.addEventListener('click', function () {
     alert('Vamos a almacenar los datos ingresados')
     almacenarDatosFinancieros()
+})
+
+botonCalcular.addEventListener('click', function() {
+    alert('Vamos a calcular los datos almacenados')
+    calculosIngresosVsGastos()
+})
+
+botonBorrarDatos.addEventListener('click', function() {
+    localStorage.clear()
 })
