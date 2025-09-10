@@ -13,6 +13,9 @@ let confirmacionIngreso = false
 let confirmacionGasto = false
 let confirmacionGuardadoDatos = false
 let respuestaInvalida = true
+let totalIngresos = 0
+let totalGastos = 0
+let diferenciaGastosIngresos = 0
 
 //FUNCIONES========================================================
 
@@ -174,6 +177,8 @@ function calculosIngresosVsGastos() {
     console.log(gastosRecuperadosArray)
 
     alert('Datos disponibles\n' + 'Ingresos: ' + JSON.stringify(ingresosRecuperadosArray) + '\nGastos: ' + JSON.stringify(gastosRecuperadosArray))
+
+    // totalIngresos = ingresosRecuperadosArray[]
 } 
 
 //DOM==============================================================
