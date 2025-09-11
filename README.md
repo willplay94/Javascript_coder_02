@@ -55,6 +55,25 @@ Ejercicio_XX_nombre_ejercicio/
 
 **Cómo ejecutar:** Abrir `index.html` en el navegador y usar los botones para interactuar
 
+### Ejercicio 03 - Calculadora de Cuota de Crédito
+**Ubicación:** `Ejercicio_03_calculo_cuota/`
+
+**Descripción:** Calculadora que determina la cuota mensual de un crédito basado en:
+- Monto total del crédito
+- Tasa de interés anual
+- Plazo en meses
+- Aplicación de la fórmula de amortización francesa
+
+**Conceptos practicados:**
+- Funciones flecha (arrow functions)
+- Operaciones matemáticas avanzadas con `Math.pow()`
+- Conversión de tipos de datos con `parseInt()`
+- Formateo de números con `toLocaleString('es-CO')`
+- Cálculos financieros y fórmulas de interés
+- Validación de entrada de usuario
+
+**Cómo ejecutar:** Abrir `index.html` en el navegador
+
 ## 📈 Próximos Ejercicios
 
 Este repositorio se actualizará continuamente con nuevos ejercicios que cubrirán:
