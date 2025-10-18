@@ -1,0 +1,107 @@
+## Promesas
+
+### Nivel Básico
+
+**1. Primera Promesa Simple**
+Crea una función que retorne una Promesa que se resuelva con el mensaje "¡Hola, Mundo!" después de 1 segundo.[2]
+
+**2. Promesa con Rechazo**
+Crea una función que retorne una Promesa que se rechace con un mensaje de error después de 2 segundos.[2]
+
+**3. Consumir una Promesa**
+Crea una Promesa que se resuelva con un número aleatorio entre 1 y 10, luego usa `.then()` para imprimir el resultado en consola.[1]
+
+**4. Encadenar .then()**
+Crea una Promesa que se resuelva con el número 5, luego encadena tres `.then()` donde cada uno multiplique el valor por 2.[2]
+
+**5. Manejo Básico de Errores**
+Crea una Promesa que se rechace y usa `.catch()` para capturar y mostrar el error.[2]
+
+### Nivel Medio
+
+**6. Promise.all()**
+Crea tres Promesas que se resuelvan en diferentes tiempos (1s, 2s, 3s) y usa `Promise.all()` para esperar que todas se completen.[1]
+
+**7. Promise.race()**
+Crea múltiples Promesas con diferentes tiempos de resolución y usa `Promise.race()` para obtener la primera que se complete.[1]
+
+**8. Promise.allSettled()**
+Crea un array de Promesas donde algunas se resuelvan y otras se rechacen, luego usa `Promise.allSettled()` para obtener todos los resultados.[2]
+
+**9. Retry con Promesas**
+Implementa una función que reintente una operación asíncrona hasta 3 veces si falla.[1]
+
+**10. Ejecución en Serie**
+Crea una función que ejecute un array de Promesas secuencialmente (una después de otra), no en paralelo.[1][2]
+
+### Nivel Avanzado
+
+**11. Retry con Timeout**
+Implementa un sistema de reintentos que incluya un timeout y cancele la operación si tarda demasiado.[1]
+
+**12. Retry con Backoff Exponencial**
+Crea una función que reintente una operación con tiempos de espera crecientes (1s, 2s, 4s, 8s).[1]
+
+**13. Control de Concurrencia**
+Implementa una función que ejecute múltiples Promesas pero limite el número máximo de ejecuciones simultáneas.[1]
+
+**14. Promise Queue con Abort**
+Crea un sistema de cola de Promesas donde se puedan cancelar las operaciones pendientes.[1]
+
+**15. Implementar Promise desde Cero**
+Crea tu propia implementación básica de una Promesa siguiendo el estándar A+.[1]
+
+## Try-Catch-Finally
+
+### Nivel Básico
+
+**1. Try-Catch Básico**
+Escribe un programa que intente ejecutar código con un error sintáctico y capture el error mostrando su mensaje.[3][4]
+
+**2. División Segura**
+Crea una función que divida dos números usando try-catch para manejar la división por cero y argumentos no numéricos.[3]
+
+**3. Finally Básico**
+Escribe código que use try-catch-finally donde el bloque finally imprima "Operación completada" sin importar si hubo error.[5][6]
+
+**4. Lanzar Errores Personalizados**
+Crea una función que valide la edad de un usuario (debe ser mayor a 18) y lance un error personalizado si no cumple.[4]
+
+**5. Tipos de Errores**
+Escribe ejemplos que lancen y capturen diferentes tipos de errores (TypeError, ReferenceError, RangeError).[3]
+
+### Nivel Medio
+
+**6. Try-Catch Anidado**
+Implementa bloques try-catch anidados donde el catch interno lance el error hacia el catch externo.[6]
+
+**7. Finally con Recursos**
+Simula abrir un archivo, leer su contenido con posible error, y cerrar el archivo en el bloque finally.[6]
+
+**8. Validación de Formulario**
+Crea una función que valide múltiples campos de un formulario lanzando errores específicos para cada tipo de validación fallida.[3]
+
+**9. Error Handler Centralizado**
+Implementa una función centralizadora de errores que clasifique y maneje diferentes tipos de errores de forma apropiada.[4]
+
+**10. Try-Catch con Promesas**
+Combina try-catch con async/await para manejar errores de operaciones asíncronas.[7]
+
+### Nivel Avanzado
+
+**11. Sistema de Logging de Errores**
+Crea un sistema que capture errores, los registre con timestamp, stack trace y contexto, y los almacene.[4]
+
+**12. Retry con Try-Catch**
+Implementa un sistema que reintente operaciones fallidas usando try-catch en un bucle con límite de intentos.[1]
+
+**13. Error Boundaries**
+Simula un sistema similar a Error Boundaries de React que capture errores de componentes hijos y muestre UI de fallback.[4]
+
+**14. Custom Error Classes**
+Crea clases personalizadas de error que extiendan de Error con propiedades y métodos adicionales (ValidationError, NetworkError, etc.).[3]
+
+**15. Global Error Handler**
+Implementa un manejador global de errores que capture errores no capturados y promesas rechazadas sin catch.[4]
+
+Estos ejercicios te permitirán dominar progresivamente ambos conceptos fundamentales del manejo asíncrono y de errores en JavaScript.[2][1]

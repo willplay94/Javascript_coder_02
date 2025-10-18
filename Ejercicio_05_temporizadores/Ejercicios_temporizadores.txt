@@ -1,0 +1,27 @@
+## Ejercicios Básicos
+
+**Contador automático**: Crea un contador que se incremente cada segundo usando `setInterval`, y que se detenga al llegar a 10 con `clearInterval`.[2]
+
+**Mensaje retrasado**: Usa `setTimeout` para mostrar un mensaje de bienvenida después de 3 segundos de cargar la página.[3][4]
+
+**Reloj digital**: Muestra la hora actual actualizándola cada segundo con `setInterval` y el objeto `Date()`.[5][3]
+
+## Ejercicios Intermedios
+
+**Temporizador regresivo (Countdown)**: Crea un contador que parta desde un tiempo específico (ej: 10:00) y vaya disminuyendo hasta 0, mostrando días, horas, minutos y segundos. Es uno de los proyectos más populares para practicar.[6][5]
+
+**Cronómetro con controles**: Implementa un cronómetro con botones de Iniciar, Pausar y Resetear que registre minutos, segundos y milisegundos.[7][1]
+
+**Slider automático**: Crea un carrusel de imágenes que cambie automáticamente cada 3 segundos usando `setInterval`, con botones para pausar y reanudar.[2][7]
+
+**Notificación temporal**: Muestra una alerta o notificación que desaparezca automáticamente después de 5 segundos usando `setTimeout`.[3]
+
+## Ejercicios Avanzados
+
+**Pomodoro Timer**: Desarrolla un temporizador de productividad que alterne entre sesiones de trabajo (25 minutos) y descansos (5 minutos).[2]
+
+**Implementa tu propio setInterval**: Crea una función `mySetInterval()` usando solo `setTimeout` o `requestAnimationFrame` para entender mejor cómo funcionan internamente.[8]
+
+**Juego de reacción**: Mide el tiempo de reacción del usuario mostrando un botón después de un tiempo aleatorio con `setTimeout`.[1]
+
+**Recordatorio que no olvides limpiar** siempre los temporizadores con `clearInterval()` o `clearTimeout()` cuando termines de usarlos para evitar problemas de rendimiento y memory leaks.

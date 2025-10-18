@@ -74,12 +74,64 @@ Ejercicio_XX_nombre_ejercicio/
 
 **Cómo ejecutar:** Abrir `index.html` en el navegador
 
+### Ejercicio 04 - Filtrado de Datos Financieros
+**Ubicación:** `Ejercicio_04_filtrar_finanzas/`
+
+**Descripción:** Ejemplos prácticos de métodos de arrays aplicados a datos financieros:
+- Uso de `forEach()` para iterar sobre arrays de objetos
+- Búsqueda de elementos específicos con `find()`
+- Filtrado de datos por precio máximo y categoría con `filter()`
+- Datos precargados de ingresos y gastos para practicar
+
+**Conceptos practicados:**
+- Métodos de arrays: `forEach()`, `find()`, `filter()`
+- Arrow functions como callbacks
+- Trabajo con arrays de objetos
+- Filtrado por múltiples criterios
+- Método `includes()` para búsqueda en strings
+
+**Cómo ejecutar:** Abrir `index.html` en el navegador y descomentar los ejemplos en el código
+
+### Ejercicio 05 - Temporizadores
+**Ubicación:** `Ejercicio_05_temporizadores/`
+
+**Descripción:** Implementación de un contador automático que muestra el uso de temporizadores:
+- Contador que incrementa cada segundo usando `setInterval()`
+- Detención automática del contador al llegar a 10
+- Actualización dinámica del DOM con el valor del contador
+- Mensaje de finalización cuando termina la cuenta
+
+**Conceptos practicados:**
+- Temporizadores con `setInterval()`
+- Detención de intervalos con `clearInterval()`
+- Manipulación del DOM con `innerText` e `innerHTML`
+- Arrow functions en callbacks
+- Condicionales para control de flujo
+
+**Cómo ejecutar:** Abrir `index.html` en el navegador (el contador inicia automáticamente)
+
+### Ejercicio 06 - Manejo de Errores con Try-Catch-Finally
+**Ubicación:** `Ejercicio_06_tryCatchFinally_promesa/`
+
+**Descripción:** Implementación de manejo de errores en operaciones matemáticas:
+- División con validación de casos especiales (división por cero)
+- Captura y propagación de errores personalizados
+- Uso de bloque `finally` para logs de análisis
+- Lanzamiento de errores con `throw new Error()`
+
+**Conceptos practicados:**
+- Bloques try-catch-finally
+- Lanzamiento de errores con `throw`
+- Creación de errores personalizados con `new Error()`
+- Validación de operaciones matemáticas (Infinity)
+- Arrow functions para lógica de negocio
+- Manejo de excepciones
+
+**Cómo ejecutar:** Abrir `index.html` en el navegador e introducir un número
+
 ## 📈 Próximos Ejercicios
 
 Este repositorio se actualizará continuamente con nuevos ejercicios que cubrirán:
-- Manipulación del DOM
-- Eventos en JavaScript
-- Programación orientada a objetos
 - APIs y fetch
-- Algoritmos y estructuras de datos
+- Promesas y async/await
 - Y mucho más...
